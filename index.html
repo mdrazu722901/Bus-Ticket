@@ -117,7 +117,7 @@
                             </div>
                             <div class="flex">
                                 <img src="images/seat-green.png" class="h-10 w-10" alt="">
-                                <span>40 seats left</span>
+                                <p></p><span id="seatsLeft">40</span> seats left </p>
                             </div>
                         </div>
                         <div style="background-color: lightcyan;" class="p-8 rounded mt-8">
@@ -262,21 +262,22 @@
                                     <p>class</p>
                                     <p>price</p>
                                 </div>
-                                <div id="seatdatilsDiv">
+                                <div>
                                     <div class="flex justify-between">
-                                        <p id="seatName1"></p>
-                                        <p id="seatType1">Economy</p>
-                                        <p id="Price1">500</p>
+                                        <!-- set dynamically Elements in heres -->
+                                        <div id="seatdatilsDiv">
+
+                                        </div>
                                     </div>
                                     <hr class="mb-4">
                                     <div class="flex justify-between">
                                         <p>TotalPrice</p>
-                                        <p>BDT 1000</p>
+                                        <p>BDT <span id="totolTicketPrice">0</span></p>
                                     </div>
                                 </div>
-                                <div>
-                                    <label class="input  flex justify-around my-4">
-                                        <input type="text" class="grow" placeholder="Search" />
+                                <div class="btn-disabled" id="getOfficeInput">
+                                    <label class="input border-2 rounded  flex justify-around my-4">
+                                        <input type="text" class="p-2" placeholder="Search" />
                                         <span class="btn btn-warning">Apply</span>
                                     </label>
                                 </div>
@@ -292,13 +293,13 @@
                                 </label>
                                 <p>Phone Number*</p>
                                 <label class="input  flex justify-around my-4">
-                                    <input type="text" class="grow" placeholder="Phone Number" />
+                                    <input type="text" class="grow" placeholder="Phone Number" id="Number" />
                                 </label>
                                 <p>Email ID</p>
                                 <label class="input  flex justify-around my-4">
                                     <input type="text" class="grow" placeholder="Enter your email adderss" />
                                 </label>
-                                <button class="btn btn-block btn-warning">Next</button>
+                                <button class="btn btn-block btn-warning btn-disabled" id="btn-Next">Next</button>
                             </div>
 
                             <a href="" class="pr-6">Terms & Condition</a>
