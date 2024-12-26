@@ -11,12 +11,12 @@ for (const element of kbdClassElements) {
         selectedSeat(check)
         getOffcer(check)
 
-       const perseatPrice = 550;
-       let allseatPrice = 550 * check.length;
-       
-       let totalPrice = document.getElementById("totolTicketPrice");
-       totalPrice.innerText = allseatPrice;
-       
+        const perseatPrice = 550;
+        let allseatPrice = 550 * check.length;
+
+        let totalPrice = document.getElementById("totolTicketPrice");
+        totalPrice.innerText = allseatPrice;
+
     })
 }
 
@@ -123,3 +123,63 @@ for (const element of kbdClassElements) {
 
     })
 }
+
+
+
+
+const inputBOX = document.getElementById("inputBOX").value;
+console.log(inputBOX);
+document.getElementById("applybtn").addEventListener("click", function () {
+    const inputBOX = document.getElementById("inputBOX").value;
+    // let inputValueConvert = parseInt(inputBOX);
+
+    if (inputBOX === "NEW15") {
+        let totalPrice = document.getElementById("totolTicketPrice").innerText;
+
+        let totalPriceConvert = parseInt(totalPrice);
+
+        let fiftieen = totalPriceConvert * 15 / 100;
+
+        let afterOffering = totalPriceConvert - fiftieen;
+
+        let grandTotal = document.getElementById("grandTotal");
+        grandTotal.innerText = afterOffering;
+    }
+    else if (inputBOX === "Couple 20") {
+        let totalPrice = document.getElementById("totolTicketPrice").innerText;
+
+        let totalPriceConvert = parseInt(totalPrice);
+
+        let fiftieen = totalPriceConvert * 20 / 100;
+
+        let afterOffering = totalPriceConvert - fiftieen;
+
+        let grandTotal = document.getElementById("grandTotal");
+        grandTotal.innerText = afterOffering;
+
+    }
+
+
+
+})
+
+
+
+document.getElementById("btn-Next").addEventListener("click", function () {
+    let tap = document.getElementById("successTab");
+    tap.classList.remove("hidden")
+
+    let whileContante = document.getElementById("whileContante");
+    whileContante.classList.add("hidden")
+
+})
+
+document.getElementById("continueBtn").addEventListener("click", function () {
+    let tap = document.getElementById("successTab");
+    tap.classList.add("hidden")
+
+    let whileContante = document.getElementById("whileContante");
+    whileContante.classList.remove("hidden")
+    location.reload();
+
+})
