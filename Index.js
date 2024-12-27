@@ -12,7 +12,7 @@ for (const element of kbdClassElements) {
         getOffcer(check)
 
         const perseatPrice = 550;
-        let allseatPrice = 550 * check.length;
+        let allseatPrice = perseatPrice * check.length;
 
         let totalPrice = document.getElementById("totolTicketPrice");
         totalPrice.innerText = allseatPrice;
@@ -23,6 +23,7 @@ for (const element of kbdClassElements) {
 
 function bookingSeat(checkSeat) {
     forNextButton(checkSeat.length)
+    console.log(checkSeat.length, "length")
     let selectSeat = document.getElementById("SetBookingCount");
     selectSeat.innerText = checkSeat.length;
 
@@ -38,9 +39,7 @@ function selectedSeat(selectElements) {
         for (const element of kbdClassElements) {
 
             if (element.classList.contains("bg-red-600") === false) {
-
                 element.classList.add("btn-disabled")
-
             }
 
         }
@@ -56,6 +55,7 @@ function selectedSeat(selectElements) {
         }
     }
 }
+
 function getOffcer(selectSeat) {
     if (selectSeat.length === 4) {
         const offerCoupnUseBox = document.getElementById("getOfficeInput");
@@ -76,12 +76,13 @@ function forNextButton(bookingSeatNumber) {
         let convertNumber = numbers.toString();
 
         conditions(convertNumber, bookingSeatNumber)
+       
 
     })
 };
 
 function conditions(convertNumber, bookingSeatNumber) {
-
+        console.log(bookingSeatNumber, "booking-the-seat-numbre");
     if (convertNumber.length >= 11 && bookingSeatNumber >= 1) {
         let nextButton = document.getElementById("btn-Next");
         nextButton.classList.remove("btn-disabled");
@@ -107,7 +108,7 @@ for (const element of kbdClassElements) {
             let createP = document.createElement("p");
             createP.innerText = element.id + "----------------Econome--------------" + 550;
             mainDivOfDetails.appendChild(createP);
-            console.log("has a attirbute booking")
+           
             createP.setAttribute("id", element.id)
 
         }
@@ -115,7 +116,7 @@ for (const element of kbdClassElements) {
             let childElements = mainDivOfDetails.children;
             for (const selectSeatElement of childElements) {
                 if (selectSeatElement.id === selectSeatID) {
-                    console.log(selectSeatElement);
+            
                     selectSeatElement.remove();
                 }
             }
@@ -131,27 +132,24 @@ const inputBOX = document.getElementById("inputBOX").value;
 console.log(inputBOX);
 document.getElementById("applybtn").addEventListener("click", function () {
     const inputBOX = document.getElementById("inputBOX").value;
-    // let inputValueConvert = parseInt(inputBOX);
+    
 
     if (inputBOX === "NEW15") {
         let totalPrice = document.getElementById("totolTicketPrice").innerText;
-
         let totalPriceConvert = parseInt(totalPrice);
 
         let fiftieen = totalPriceConvert * 15 / 100;
-
         let afterOffering = totalPriceConvert - fiftieen;
 
         let grandTotal = document.getElementById("grandTotal");
         grandTotal.innerText = afterOffering;
     }
+
     else if (inputBOX === "Couple 20") {
         let totalPrice = document.getElementById("totolTicketPrice").innerText;
-
         let totalPriceConvert = parseInt(totalPrice);
 
         let fiftieen = totalPriceConvert * 20 / 100;
-
         let afterOffering = totalPriceConvert - fiftieen;
 
         let grandTotal = document.getElementById("grandTotal");
